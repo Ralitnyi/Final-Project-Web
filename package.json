@@ -16,5 +16,18 @@
     "suiteName": "junit test results",
     "outputDirectory": ".",
     "outputName": "junit.xml"
-  }
+  },
+  "name": "final",
+  "version": "1.0.0",
+  "description": "Final project for the course \"Web Development\"",
+  "main": "babel.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@autocode.git.epam.com:i.ralittyny/final.git"
+  },
+  "author": "Ralitnyi Ivan",
+  "license": "ISC"
 }
