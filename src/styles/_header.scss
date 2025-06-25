@@ -28,11 +28,13 @@
         @include mixins.font("sm", $color: $white-color, $text-align: center);
         text-decoration: none;
         letter-spacing: 20%;
-        transition: box-shadow 0.2s;
+        transition: font-weight 0.2s, border-color 0.2s;
+        border-bottom: 2px solid transparent;
 
         &:hover,
         &:focus {
-            box-shadow: 0 2px 0 0 $white-color;
+            border-bottom-color: $white-color;
+            font-weight: 700;
         }
     }
 }

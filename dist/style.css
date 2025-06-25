@@ -225,10 +225,12 @@ button {
   font-weight: normal;
   text-decoration: none;
   letter-spacing: 20%;
-  transition: box-shadow 0.2s;
+  transition: font-weight 0.2s, border-color 0.2s;
+  border-bottom: 2px solid transparent;
 }
 .header__link:hover, .header__link:focus {
-  box-shadow: 0 2px 0 0 #ffffff;
+  border-bottom-color: #ffffff;
+  font-weight: 700;
 }
 
 .hero {
