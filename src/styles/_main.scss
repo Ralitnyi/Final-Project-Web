@@ -1,0 +1,52 @@
+@use "sass:map";
+
+@use "./kit/variables" as *;
+@use "./kit/mixins";
+
+.main-content {
+    @include mixins.flex-box(column, center, center);
+
+    background-color: $main-background-color;
+    padding: 4.375rem 9.375rem; // 70px 150px
+
+    &__headline {
+        @include mixins.font(
+            "xxl",
+            1.35,
+            $main-headline-color,
+            "Notable",
+            center
+        );
+
+        margin-bottom: 2.875rem; // 46px
+    }
+
+    &__subheadline {
+        @include mixins.font(
+            "xl",
+            1.33,
+            $main-subheadline-color,
+            "Poppins",
+            center
+        );
+
+        margin-bottom: 3.5rem; // 56px
+    }
+
+    &__body {
+        @include mixins.flex-box(row, center, start, 5.125rem);
+        margin-bottom: 4.25rem; // 68px
+    }
+
+    &__text {
+        @include mixins.font("md", 1.375, $main-text-color, $text-align: left);
+        flex: 1 1 50%;
+    }
+
+    &__btn {
+        @include mixins.font("sm", 1.625, $white-color, "Oswald", center);
+        background-color: $btn-color;
+        border-radius: 50px;
+        padding: 0.375rem 1.125rem; // 6px 18px
+    }
+}

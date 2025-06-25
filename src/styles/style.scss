@@ -1,0 +1,12 @@
+@use "kit/reset";
+@use "./kit/fonts";
+
+@use "./header";
+@use "./hero";
+@use "./main";
+@use "./video";
+@use "./footer";
+
+body {
+    font-family: "Source Sans Pro";
+}

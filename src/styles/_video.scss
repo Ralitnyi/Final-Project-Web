@@ -1,0 +1,49 @@
+@use "./kit/variables" as *;
+@use "./kit/mixins";
+
+.learn-more {
+    background-image: linear-gradient(
+            to right,
+            rgba(170, 13, 13, 0.2),
+            rgba(170, 13, 13, 0)
+        ),
+        image-set(
+            url("../src/assets/images/video/grapes.jpg") 1x,
+            url("../src/assets/images/video/grapes@2x.jpg") 2x
+        );
+    background-size: cover;
+    background-position: center;
+
+    &__container {
+        @include mixins.flex-box(column, center, center);
+        padding: 4.75rem 12.5rem; // 76px 200px
+    }
+
+    &__headline {
+        @include mixins.font("xxl", 1, $white-color, "Notable", center);
+        margin-bottom: 6.25rem; // 100px
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 10.25rem;
+        height: 10.25rem;
+        // font-size: 3rem;
+        margin-bottom: 5.5rem; // 88px
+        background-color: $white-color;
+        border-radius: 50%;
+        color: $btn-color;
+
+        &-symbol {
+            @include mixins.font("xxxl", 1, $btn-color);
+            margin-left: 1rem; // 16px
+        }
+    }
+
+    &__text {
+        @include mixins.font("xl", 1.33, $white-color);
+        max-width: 32.75rem; // 524px;
+    }
+}

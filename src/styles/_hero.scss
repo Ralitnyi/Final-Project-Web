@@ -1,0 +1,40 @@
+@use "sass:map";
+
+@use "./kit/variables" as *;
+@use "./kit/mixins";
+@use "./kit/fonts";
+
+.hero {
+    background-color: $black-color;
+    background-image: image-set(
+        url("../src/assets/images/hero/red-wine.jpg") 1x,
+        url("../src/assets/images/hero/red-wine@2x.jpg") 2x
+    );
+
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    padding-top: 12.5rem; // 200px
+    padding-bottom: 10rem; // 160px
+
+    &__content {
+        @include mixins.flex-box(column, center, center);
+        margin-left: 56.3%;
+        color: $white-color;
+    }
+
+    &__logo {
+        width: 135px;
+        height: 135px;
+        margin-bottom: 2rem;
+    }
+
+    &__headline {
+        @include mixins.font("xxxl", 1.06, $white-color, "Sail", center);
+        margin-bottom: 3.875rem; // 62px
+    }
+
+    &__description {
+        @include mixins.font("xl", 1.33, $white-color, $text-align: center);
+    }
+}

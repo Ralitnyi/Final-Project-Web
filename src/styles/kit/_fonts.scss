@@ -1,0 +1,45 @@
+@use "./mixins";
+
+@include mixins.font-family(
+    "Source Sans Pro",
+    "../src/assets/fonts/source-sans-pro/SourceSansPro-Regular",
+    400,
+    normal
+);
+@include mixins.font-family(
+    "Source Sans Pro",
+    "../src/assets/fonts/source-sans-pro/SourceSansPro-Bold",
+    600,
+    normal
+);
+@include mixins.font-family(
+    "Source Sans Pro",
+    "../src/assets/fonts/source-sans-pro/SourceSansPro-It",
+    400,
+    italic
+);
+@include mixins.font-family(
+    "Sail",
+    "../src/assets/fonts/Sail/Sail-Regular",
+    400,
+    normal
+);
+@include mixins.font-family(
+    "Poppins",
+    "../src/assets/fonts/Poppins/Poppins-Regular",
+    400,
+    normal
+);
+@include mixins.font-family(
+    "Notable",
+    "../src/assets/fonts/Notable/Notable-Regular",
+    400,
+    normal
+);
+
+@include mixins.font-family(
+    "Oswald",
+    "../src/assets/fonts/Oswald/Oswald-VariableFont_wght",
+    400,
+    normal
+);
