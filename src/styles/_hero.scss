@@ -36,5 +36,6 @@
 
     &__description {
         @include mixins.font("xl", 1.33, $white-color, $text-align: center);
+        margin-inline: 3rem;
     }
 }

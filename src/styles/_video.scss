@@ -25,12 +25,9 @@
     }
 
     &__btn {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include mixins.flex-box(column, center, center);
         width: 10.25rem;
         height: 10.25rem;
-        // font-size: 3rem;
         margin-bottom: 5.5rem; // 88px
         background-color: $white-color;
         border-radius: 50%;

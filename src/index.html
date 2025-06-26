@@ -10,6 +10,13 @@
         <!-- Header -->
         <header class="header">
             <a class="header__logo" href="">PROJECT</a>
+
+            <!-- Mobile burger menu -->
+            <div class="header__menu-bar" onclick="menuOnClick()">
+                <div id="bar1" class="header__bar"></div>
+                <div id="bar2" class="header__bar"></div>
+                <div id="bar3" class="header__bar"></div>
+            </div>
             <nav class="header__navbar">
                 <ul class="header__menu">
                     <li><a class="header__link" href="">PROJECTS</a></li>
@@ -19,6 +26,9 @@
                 </ul>
             </nav>
         </header>
+
+        <!-- Burger menu background -->
+        <div class="menu-bg"></div>
 
         <!-- Hero block -->
         <section class="hero">
@@ -30,8 +40,8 @@
                 />
                 <h1 class="hero__headline">Your<br />Headline<br />Here</h1>
                 <p class="hero__description">
-                    Lorem ipsum dolor sit amet, consectetur<br />adipiscing elit
-                    sed do eiusmod.
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit sed
+                    do eiusmod.
                 </p>
             </div>
         </section>
@@ -88,7 +98,7 @@
         <!-- Footer -->
         <footer class="footer">
             <div class="footer__contacts">
-                <p class="footer__text">123 Street, Anytown,<br />USA 12345</p>
+                <p class="footer__text">123 Street, Anytown, USA 12345</p>
                 <a class="footer__text" href="mailto:hello@website.com"
                     >hello@website.com
                 </a>
@@ -105,5 +115,20 @@
                 <p class="footer__text">© 2021 Project. All rights reserved</p>
             </div>
         </footer>
+
+        <!-- Mobile burger menu -->
+        <script>
+            function menuOnClick() {
+                document
+                    .querySelector(".header__menu-bar")
+                    .classList.toggle("change");
+                document
+                    .querySelector(".header__navbar")
+                    .classList.toggle("change");
+                document
+                    .querySelector(".menu-bg")
+                    .classList.toggle("change-bg");
+            }
+        </script>
     </body>
 </html>

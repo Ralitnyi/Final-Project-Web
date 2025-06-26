@@ -7,6 +7,9 @@
 @use "./video";
 @use "./footer";
 
-body {
-    font-family: "Source Sans Pro";
-}
+// Mobile styles
+@use "./header-mobile";
+@use "./hero-mobile";
+@use "./main-mobile";
+@use "./video-mobile";
+@use "./footer-mobile";

@@ -1,0 +1,40 @@
+@use "./kit/variables" as *;
+@use "./kit/mixins";
+
+@media screen and (max-width: 768px) and (min-width: 480px) {
+    .hero {
+        position: relative; // потрібно для абсолютного позиціонування псевдоелемента
+
+        &::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 3;
+            pointer-events: none;
+        }
+
+        background-position: center;
+        background-size: cover;
+
+        padding-top: 8.75rem; // 86px
+        &__content {
+            margin-left: 0;
+            position: relative;
+            z-index: 4;
+        }
+
+        &__logo {
+            margin-bottom: 4rem;
+        }
+
+        &__headline {
+            @include mixins.font("xxxl-m", 0.92, $white-color, "Sail", center);
+            margin-bottom: 8rem;
+        }
+
+        &__description {
+            color: $white-color-70;
+        }
+    }
+}
