@@ -3,7 +3,7 @@
 
 @media screen and (max-width: 768px) and (min-width: 480px) {
     .hero {
-        position: relative; // потрібно для абсолютного позиціонування псевдоелемента
+        position: relative;
 
         &::before {
             content: "";
