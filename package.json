@@ -1,7 +1,7 @@
 {
   "scripts": {
     "test": "jest --reporters=jest-junit",
-    "build": "sass src/styles/sytle.scss dist/style.css",
+    "build": "sass src/styles/style.scss dist/style.css",
     "postcss": "postcss dist/style.css -o dist/style.min.css",
     "prod": "npm run build && npm run postcss",
     "sass": "sass --watch src/styles:dist/",
@@ -12,6 +12,7 @@
   "devDependencies": {
     "@babel/core": "^7.23.5",
     "@babel/preset-env": "^7.23.5",
+    "@fullhuman/postcss-purgecss": "^7.0.2",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.0.7",
     "html-validate": "^8.7.4",
@@ -19,11 +20,8 @@
     "jest-junit": "^13.2.0",
     "jsdom": "^19.0.0",
     "parse-gitignore": "^2.0.0",
-    "postcss": "^8.5.6",
     "postcss-cli": "^11.0.1",
-    "postcss-purgecss": "^5.0.0",
     "prettier": "^3.6.2",
-    "purgecss": "^7.0.2",
     "sass": "^1.89.2",
     "stylelint": "^16.21.0",
     "stylelint-config-standard": "^38.0.0",
