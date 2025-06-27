@@ -31,11 +31,20 @@
         margin-bottom: 5.5rem; // 88px
         background-color: $white-color;
         border-radius: 50%;
-        color: $btn-color;
+        transition: background-color 0.3s ease-in-out;
 
         &-symbol {
             @include mixins.font("xxxl", 1, $btn-color);
             margin-left: 1rem; // 16px
+            transition: color 0.3s;
+        }
+
+        &:hover {
+            background-color: $btn-color;
+
+            .learn-more__btn-symbol {
+                color: $white-color;
+            }
         }
     }
 

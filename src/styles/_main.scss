@@ -1,7 +1,6 @@
-@use "sass:map";
-
 @use "./kit/variables" as *;
 @use "./kit/mixins";
+@use "./kit/animations";
 
 .main-content {
     @include mixins.flex-box(column, center, center);
@@ -49,5 +48,12 @@
         border-radius: 50px;
         width: 7.25rem;
         height: 2.375rem;
+
+        transform-origin: center left;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: rotate(8deg);
+        }
     }
 }

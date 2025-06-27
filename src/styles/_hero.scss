@@ -1,8 +1,7 @@
-@use "sass:map";
-
 @use "./kit/variables" as *;
 @use "./kit/mixins";
 @use "./kit/fonts";
+@use "./kit/animations";
 
 .hero {
     background-color: $black-color;
@@ -21,12 +20,19 @@
         @include mixins.flex-box(column, center, center);
         margin-left: 56.3%;
         color: $white-color;
+
+        perspective: 800px;
     }
 
     &__logo {
         width: 135px;
         height: 135px;
         margin-bottom: 2rem;
+
+        transform-origin: center center;
+        transform-style: preserve-3d;
+        will-change: transform;
+        animation: logoFlip 4s ease-in-out infinite;
     }
 
     &__headline {
