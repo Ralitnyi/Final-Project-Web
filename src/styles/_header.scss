@@ -6,7 +6,7 @@
 .header {
     position: absolute;
 
-    @include mixins.flex-box(row, flex-start, center, 10.3125rem);
+    @include mixins.flex-box(row, flex-start, center, 7rem);
     margin-top: 1.625rem; // 26px:
     margin-left: 9.5rem; // 152px
 
