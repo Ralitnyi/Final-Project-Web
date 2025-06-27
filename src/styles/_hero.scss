@@ -1,47 +1,46 @@
-@use "./kit/variables" as *;
-@use "./kit/mixins";
-@use "./kit/fonts";
-@use "./kit/animations";
+@use './kit/variables' as *;
+@use './kit/mixins';
+@use './kit/fonts';
+@use './kit/animations';
 
 .hero {
-    background-color: $black-color;
-    background-image: image-set(
-        url("../src/assets/images/hero/red-wine.jpg") 1x,
-        url("../src/assets/images/hero/red-wine@2x.jpg") 2x
-    );
+  background-color: $black-color;
+  background-image: image-set(
+    url('../src/assets/images/hero/red-wine.jpg') 1x,
+    url('../src/assets/images/hero/red-wine@2x.jpg') 2x
+  );
+  background-repeat: no-repeat;
+  background-size: contain;
+  padding-top: 12.5rem; // 200px
+  padding-bottom: 10rem; // 160px
 
-    background-repeat: no-repeat;
-    background-size: contain;
+  &__content {
+    @include mixins.flex-box(column, center, center);
 
-    padding-top: 12.5rem; // 200px
-    padding-bottom: 10rem; // 160px
+    margin-left: 56.3%;
+    color: $white-color;
+    perspective: 800px;
+  }
 
-    &__content {
-        @include mixins.flex-box(column, center, center);
-        margin-left: 56.3%;
-        color: $white-color;
+  &__logo {
+    width: 135px;
+    height: 135px;
+    margin-bottom: 2rem;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    will-change: transform;
+    animation: logoFlip 4s ease-in-out infinite;
+  }
 
-        perspective: 800px;
-    }
+  &__headline {
+    @include mixins.font('xxxl', 1.06, $white-color, 'Sail', center);
 
-    &__logo {
-        width: 135px;
-        height: 135px;
-        margin-bottom: 2rem;
+    margin-bottom: 3.875rem; // 62px
+  }
 
-        transform-origin: center center;
-        transform-style: preserve-3d;
-        will-change: transform;
-        animation: logoFlip 4s ease-in-out infinite;
-    }
+  &__description {
+    @include mixins.font('xl', 1.33, $white-color, $text-align: center);
 
-    &__headline {
-        @include mixins.font("xxxl", 1.06, $white-color, "Sail", center);
-        margin-bottom: 3.875rem; // 62px
-    }
-
-    &__description {
-        @include mixins.font("xl", 1.33, $white-color, $text-align: center);
-        margin-inline: 3rem;
-    }
+    margin-inline: 3rem;
+  }
 }

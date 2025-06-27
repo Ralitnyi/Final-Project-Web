@@ -1,51 +1,49 @@
-@use "./kit/variables" as *;
-@use "./kit/mixins";
+@use './kit/variables' as *;
+@use './kit/mixins';
 
 .footer {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  padding-inline: 10rem; // 160px
+  background-color: $black-color;
+  color: $white-color;
 
-    padding-inline: 10rem; // 160px
-    background-color: $black-color;
-    color: $white-color;
+  &__contacts {
+    justify-self: start;
 
-    &__contacts {
-        justify-self: start;
+    @include mixins.flex-box(column, start, stretch, 1.5rem);
+  }
 
-        @include mixins.flex-box(column, start, stretch, 1.5rem);
+  &__logo {
+    justify-self: center;
+
+    @include mixins.flex-box(column, center, center, 1.5rem);
+
+    margin: 2.25rem 0; // 36px
+
+    &-img {
+      width: 5.75rem; // 92px
+      height: 5.75rem; // 92px
     }
 
-    &__logo {
-        justify-self: center;
+    &-link {
+      @include mixins.font('md', $color: $white-color, $text-align: center);
 
-        @include mixins.flex-box(column, center, center, 1.5rem);
-        margin: 2.25rem 0; // 36px
-
-        &-img {
-            width: 5.75rem; // 92px
-            height: 5.75rem; // 92px
-        }
-
-        &-link {
-            @include mixins.font(
-                "md",
-                $color: $white-color,
-                $text-align: center
-            );
-            letter-spacing: 20%;
-            margin-left: 0.5rem; // 8px
-        }
+      letter-spacing: 20%;
+      margin-left: 0.5rem; // 8px
     }
+  }
 
-    &__rights {
-        justify-self: end;
+  &__rights {
+    justify-self: end;
 
-        @include mixins.flex-box(column, start, end);
-        margin-top: (1.5rem + (1.1875rem * 2));
-    }
+    @include mixins.flex-box(column, start, end);
 
-    &__text {
-        @include mixins.font("md", 1.1875, $white-color-70, $text-align: left);
-    }
+    margin-top: (1.5rem + (1.1875rem * 2));
+  }
+
+  &__text {
+    @include mixins.font('md', 1.1875, $white-color-70, $text-align: left);
+  }
 }

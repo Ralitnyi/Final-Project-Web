@@ -1,55 +1,57 @@
-@use "./kit/variables" as *;
-@use "./kit/mixins";
+@use './kit/variables' as *;
+@use './kit/mixins';
 
 .learn-more {
-    background-image: linear-gradient(
-            to right,
-            rgba(170, 13, 13, 0.2),
-            rgba(170, 13, 13, 0)
-        ),
-        image-set(
-            url("../src/assets/images/video/grapes.jpg") 1x,
-            url("../src/assets/images/video/grapes@2x.jpg") 2x
-        );
-    background-size: cover;
-    background-position: center;
+  background-image:
+    linear-gradient(to right, rgb(170 13 13 / 20%), rgb(170 13 13 / 0%)),
+    image-set(
+      url('../src/assets/images/video/grapes.jpg') 1x,
+      url('../src/assets/images/video/grapes@2x.jpg') 2x
+    );
+  background-size: cover;
+  background-position: center;
 
-    &__container {
-        @include mixins.flex-box(column, center, center);
-        padding: 4.75rem 12.5rem; // 76px 200px
+  &__container {
+    @include mixins.flex-box(column, center, center);
+
+    padding: 4.75rem 12.5rem; // 76px 200px
+  }
+
+  &__headline {
+    @include mixins.font('xxl', 1, $white-color, 'Notable', center);
+
+    margin-bottom: 6.25rem; // 100px
+  }
+
+  &__btn {
+    @include mixins.flex-box(column, center, center);
+
+    width: 10.25rem;
+    height: 10.25rem;
+    margin-bottom: 5.5rem; // 88px
+    background-color: $white-color;
+    border-radius: 50%;
+    transition: background-color 0.3s ease-in-out;
+
+    &-symbol {
+      @include mixins.font('xxxl', 1, $btn-color);
+
+      margin-left: 1rem; // 16px
+      transition: color 0.3s;
     }
 
-    &__headline {
-        @include mixins.font("xxl", 1, $white-color, "Notable", center);
-        margin-bottom: 6.25rem; // 100px
+    &:hover {
+      background-color: $btn-color;
+
+      .learn-more__btn-symbol {
+        color: $white-color;
+      }
     }
+  }
 
-    &__btn {
-        @include mixins.flex-box(column, center, center);
-        width: 10.25rem;
-        height: 10.25rem;
-        margin-bottom: 5.5rem; // 88px
-        background-color: $white-color;
-        border-radius: 50%;
-        transition: background-color 0.3s ease-in-out;
+  &__text {
+    @include mixins.font('xl', 1.33, $white-color);
 
-        &-symbol {
-            @include mixins.font("xxxl", 1, $btn-color);
-            margin-left: 1rem; // 16px
-            transition: color 0.3s;
-        }
-
-        &:hover {
-            background-color: $btn-color;
-
-            .learn-more__btn-symbol {
-                color: $white-color;
-            }
-        }
-    }
-
-    &__text {
-        @include mixins.font("xl", 1.33, $white-color);
-        max-width: 32.75rem; // 524px;
-    }
+    max-width: 32.75rem; // 524px;
+  }
 }

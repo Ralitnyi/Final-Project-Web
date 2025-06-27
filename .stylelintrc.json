@@ -1,0 +1,12 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": ["stylelint-scss"],
+    "rules": {
+      "at-rule-no-unknown": [true, {
+        "ignoreAtRules": ["extend", "tailwind", "apply", "variants", "responsive", "screen", "function", "if", "each", "include", "mixin"]
+      }],
+      "block-no-empty": null,
+      "unit-whitelist": ["em", "rem", "%", "s", "px", "vh", "vw"]
+    }
+  }
+  

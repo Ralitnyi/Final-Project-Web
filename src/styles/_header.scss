@@ -1,38 +1,39 @@
-@use "./kit/mixins";
-@use "./kit/variables" as *;
+@use './kit/mixins';
+@use './kit/variables' as *;
 
 .header {
-    position: absolute;
+  position: absolute;
 
-    @include mixins.flex-box(row, flex-start, center, 7rem);
-    margin-top: 1.625rem; // 26px:
-    margin-left: 9.5rem; // 152px
+  @include mixins.flex-box(row, flex-start, center, 7rem);
 
-    &__logo {
-        @include mixins.font(
-            "xl-logo",
-            $color: $white-color,
-            $font-weight: 600
-        );
-        text-decoration: none;
-        letter-spacing: 10%;
+  margin-top: 1.625rem; // 26px:
+  margin-left: 9.5rem; // 152px
+
+  &__logo {
+    @include mixins.font('xl-logo', $color: $white-color, $font-weight: 600);
+
+    text-decoration: none;
+    letter-spacing: 10%;
+  }
+
+  &__menu {
+    @include mixins.flex-box(row, space-between, center, 2rem);
+  }
+
+  &__link {
+    @include mixins.font('sm', $color: $white-color, $text-align: center);
+
+    text-decoration: none;
+    letter-spacing: 20%;
+    transition:
+      font-weight 0.2s,
+      border-color 0.2s;
+    border-bottom: 2px solid transparent;
+
+    &:hover,
+    &:focus {
+      border-bottom-color: $white-color;
+      font-weight: 700;
     }
-
-    &__menu {
-        @include mixins.flex-box(row, space-between, center, 2rem);
-    }
-
-    &__link {
-        @include mixins.font("sm", $color: $white-color, $text-align: center);
-        text-decoration: none;
-        letter-spacing: 20%;
-        transition: font-weight 0.2s, border-color 0.2s;
-        border-bottom: 2px solid transparent;
-
-        &:hover,
-        &:focus {
-            border-bottom-color: $white-color;
-            font-weight: 700;
-        }
-    }
+  }
 }

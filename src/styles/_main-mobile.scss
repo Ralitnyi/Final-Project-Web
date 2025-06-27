@@ -1,22 +1,23 @@
-@use "sass:map";
-@use "./kit/variables" as *;
-@use "./kit/mixins";
+@use 'sass:map';
+@use './kit/variables' as *;
+@use './kit/mixins';
 
-@media screen and (max-width: 768px) and (min-width: 480px) {
-    .main-content {
-        padding: 5rem 1rem;
+@media screen and (width <= 768px) and (width >= 480px) {
+  .main-content {
+    padding: 5rem 1rem;
 
-        &__headline {
-            font-size: map.get($map: $font-sizes, $key: "xxl-m");
-        }
-
-        &__body {
-            @include mixins.flex-box(column, center, start, 1.5rem);
-            margin-inline: 1.5rem;
-        }
-
-        &__subheadline {
-            font-family: "Source Sans Pro";
-        }
+    &__headline {
+      font-size: map.get($map: $font-sizes, $key: 'xxl-m');
     }
+
+    &__body {
+      @include mixins.flex-box(column, center, start, 1.5rem);
+
+      margin-inline: 1.5rem;
+    }
+
+    &__subheadline {
+      font-family: 'Source Sans Pro';
+    }
+  }
 }
